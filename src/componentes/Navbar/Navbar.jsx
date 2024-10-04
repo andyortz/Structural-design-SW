@@ -19,15 +19,24 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-[80px] px-4 py-3 bg-customBlue text-white font-secular font-light">
-        <div className="flex items-center">
-          <span className="cursor-pointer">Pandy Connect</span>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-[90px] px-4 py-3 bg-customBlue text-white font-secular font-light text-xl">
+        <div className="flex">
+          <span className="cursor-pointer">Sctructural Calculator</span>
         </div>
-        <ul className="flex items-center space-x-32 mr-28">
+        <ul className="flex space-x-32 mr-28">
           <li onClick={() => handleSharesClick("Viga")}>
             <Link to={"Viga"} className={`hover:text-customHover ${activeLink === "/Start-Up" || activeLink === "/" ? "text-customHover": ""}`}>
-              Start-Up
+              Losas
             </Link>
+          </li>
+          <li>
+            Vigas
+          </li>
+          <li>
+            Paredes
+          </li>
+          <li>
+            Columnas
           </li>
           {/* <li onClick={() => handleSharesClick("Users")}>
             <Link to={"Users"} className={`hover:text-customHover ${activeLink === "/Users"? "text-customHover": ""}`}>
