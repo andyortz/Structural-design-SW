@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from './componentes/Navbar/Navbar';
-import Viga from './pages/Viga';
-
+import Losa from './pages/Losa';
+import Carga from './pages/Carga';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Navbar />,
     children: [
       {
-        path: "/Viga",
-        element: <Viga/>,
+        path: "/Losa",
+        element: <Losa/>,
       },
+      {
+        path: "/Carga",
+        element: <Carga/>
+      }
     ],
   }
 ]);

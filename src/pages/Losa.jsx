@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 //import { helpTextStartUp } from "../../utils/helpText.js";
 //import { fetchStatus, fetchEnable } from "../../utils/api";
+import Predim from "../componentes/Predim";
+import TablaLosa from "../componentes/TablaLosa";
+import Peralte from "../componentes/Peralte";
 
-export default function Viga() {
-  const [enableBoot, setEnableBoot] = useState("");
-  const [status, setStatus] = useState("");
-  const [selectedValue, setSelectedValue] = useState("optrbt4");
-
+export default function Losa() {
 //   useEffect(() => {
 //     const fetchInitialStatus = async () => {
 //       try {
@@ -25,13 +24,21 @@ export default function Viga() {
 //   const handleRadioChange2 = (e) => {
 //     setEnableBoot(e.target.id);
 //   };
+    const [selectedValue, setSelectedValue] = useState(null);
+
+  const handleValueChange = (value) => {
+    setSelectedValue(value); // Actualizar estado global
+  };
+
   return (
     <>
       <section className="space-y-4 mt-14 py-14 px-10 bg-white h-screen">
         <h1 className="text-2xl font-extrabold">DIMENSIONADO DEL ARMADO DE LA LOSA</h1>
-        <div className="flex space-x-4">
-          <div>Current status:</div>
+        <div className="">
+          <Predim/>
+          <TablaLosa onValueChange={handleValueChange} />
         </div>  
+        <Peralte denominador={selectedValue} />
       </section>
     </>
   );

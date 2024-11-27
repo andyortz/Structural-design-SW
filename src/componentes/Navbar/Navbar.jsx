@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Viga from "../../pages/Viga";
-
+import Losa from "../../pages/Losa";
 const Navbar = () => {
   const [showStartUp, setShowStartUp] = useState(true);
   const location = useLocation();
@@ -24,11 +23,17 @@ const Navbar = () => {
           <span className="cursor-pointer">Sctructural Calculator</span>
         </div>
         <ul className="flex space-x-32 mr-28">
-          <li onClick={() => handleSharesClick("Viga")}>
-            <Link to={"Viga"} className={`hover:text-customHover ${activeLink === "/Start-Up" || activeLink === "/" ? "text-customHover": ""}`}>
-              Losas
+          <li onClick={() => handleSharesClick("Losa")}>
+            <Link to={"Losa"} className={`hover:text-customHover ${activeLink === "/Losa" || activeLink === "/" ? "text-customHover": ""}`}>
+              Losa
             </Link>
           </li>
+          <li onClick={() => handleSharesClick("Carga")}>
+            <Link to={"Carga"} className={`hover:text-customHover ${activeLink === "/Carga"? "text-customHover": ""}`}>
+              Cargas
+            </Link>
+          </li>
+
           <li>
             Vigas
           </li>
@@ -48,7 +53,7 @@ const Navbar = () => {
       <div>
         <Outlet />
       </div>
-      {showStartUp && <Viga />}
+      {showStartUp && <Losa />}
     </>
   );
 };
